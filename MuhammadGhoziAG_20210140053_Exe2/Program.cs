@@ -59,7 +59,55 @@ namespace MuhammadGhoziAG_20210140053_Exe2
 
         static void Main(string[] args)
         {
+            Program myList = new Program();
 
+            int pilihanmenu;
+            char ch;
+            do
+            {
+                do
+                {
+                    Console.WriteLine("Menu Option");
+                    Console.WriteLine("=============");
+                    Console.WriteLine("1.Merge Search");
+                    Console.WriteLine("2.Insertion Search");
+                    Console.WriteLine("3.Exit");
+                    Console.Write("Enter your choice (1,2,3) : ");
+                    pilihanmenu = Convert.ToInt32(Console.ReadLine());
+                    switch (pilihanmenu)
+                    {
+                        case 1:
+                            Console.WriteLine("");
+                            Console.WriteLine(".................");
+                            Console.WriteLine("Merge Search");
+                            Console.WriteLine(".................");
+                            myList.input();
+                            myList.Merge();
+                            break;
+                        case 2:
+                            Console.WriteLine("");
+                            Console.WriteLine(".................");
+                            Console.WriteLine("Insertion Search");
+                            Console.WriteLine(".................");
+                            myList.input();
+                            myList.Insertion();
+                            break;
+                        case 3:
+                            Console.WriteLine("exit.");
+                            break;
+                        default:
+                            Console.WriteLine("Error");
+                            break;
+                    }
+                    Console.WriteLine("\nPilih Menu Lagi? (y/n) : ");
+                    ch = char.Parse(Console.ReadLine().ToLower());
+                    Console.Clear();
+                } while (ch == 'y');
+
+                // to exit from the console 
+                Console.WriteLine("\n\nPress Return to exit. ");
+                Console.ReadLine();
+            } while (pilihanmenu != 3);
         }
     }
 }
