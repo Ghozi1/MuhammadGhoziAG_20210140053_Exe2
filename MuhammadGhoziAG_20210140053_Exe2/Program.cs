@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,11 +28,11 @@ namespace MuhammadGhoziAG_20210140053_Exe2
                 Console.Write("Enter the number of elements in the array:");
                 string s = Console.ReadLine();
                 n = Int32.Parse(s);
-                if ((n > 0) && (n <= 20))
+                if ((n > 0) && (n <= 28))
                     break;
                 else
                     Console.WriteLine
-                        ("\nArray should have minimum 1 and maximum 20 elements. \n");
+                        ("\nArray should have minimum 1 and maximum 28 elements. \n");
             }
             //Accept array elements
             Console.WriteLine("");
@@ -65,16 +66,20 @@ namespace MuhammadGhoziAG_20210140053_Exe2
         //method merge
         public void Merge()
         {
-            int i, mg, k;
-            
-            // untuk mengulangi steps 2 dan 3 varying j dari 0 ke n -1
-            // n - 1 passses (melewati)
-            for ( i = 0; i < n - 1; i++)
+
+            // Merges two subarrays of []arr.
+            // First subarray is arr[l..m]
+            // Second subarray is arr[m+1..r]
+            void merge(int[] arr, int l, int m, int r)
             {
+                // Find sizes of two
+                // subarrays to be merged
+                int n1 = m - l + 1;
+                int n2 = r - m;
 
+                
             }
-
-        }
+        }    
 
         //function
         static void Main(string[] args)
