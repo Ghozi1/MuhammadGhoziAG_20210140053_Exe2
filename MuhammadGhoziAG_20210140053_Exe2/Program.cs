@@ -78,7 +78,21 @@ namespace MuhammadGhoziAG_20210140053_Exe2
                 // Create temp arrays
                 int[] L = new int[n1];
                 int[] R = new int[n2];
-                int i, j
+                int i, j;
+
+                // Copy data to temp arrays
+                for (i = 0; i < n1; ++i)
+                    L[i] = ouzi[l + i];
+                for (j = 0; j < n2; ++j)
+                    R[j] = ouzi[m + 1 + j];
+
+                // Merge the temp arrays
+                // Initial indexes of first
+                // and second subarrays
+                i = 0;
+                j = 0;
+
+               
             }
 
         }    
