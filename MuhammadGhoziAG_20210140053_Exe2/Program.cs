@@ -14,6 +14,9 @@ namespace MuhammadGhoziAG_20210140053_Exe2
         // Deklarasi variable yang digunakan untuk menyimpan nilai data pada array
         private int n;
 
+        // Deklarasi variable nomer yang tersimpan di array 
+        private int i;
+
         //method 
         public void input()
         {
@@ -35,13 +38,15 @@ namespace MuhammadGhoziAG_20210140053_Exe2
             Console.WriteLine("---------------------");
             Console.WriteLine(" Enter array elements");
             Console.WriteLine("---------------------");
-            for (int i = 0; i < n; i++)
+            for (i = 0; i < n; i++)
             {
                 Console.Write("<" + (i + 1) + ">");
                 string s1 = Console.ReadLine();
                 ouzi[i] = Int32.Parse(s1);
             }
         }
+
+        // method display
         public void display()
         {
             // Menampilkan Hasil array yang telah tersusun 
@@ -57,6 +62,14 @@ namespace MuhammadGhoziAG_20210140053_Exe2
             Console.WriteLine("");
         }
 
+        //method merge
+        public void Merge()
+        {
+
+        }
+
+
+        //function
         static void Main(string[] args)
         {
             Program myList = new Program();
