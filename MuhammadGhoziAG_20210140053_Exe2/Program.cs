@@ -65,9 +65,16 @@ namespace MuhammadGhoziAG_20210140053_Exe2
         //method merge
         public void Merge()
         {
+            int i, mg, k;
+            
+            // untuk mengulangi steps 2 dan 3 varying j dari 0 ke n -1
+            // n - 1 passses (melewati)
+            for ( i = 0; i < n - 1; i++)
+            {
+
+            }
 
         }
-
 
         //function
         static void Main(string[] args)
@@ -82,10 +89,9 @@ namespace MuhammadGhoziAG_20210140053_Exe2
                 {
                     Console.WriteLine("Menu Option");
                     Console.WriteLine("=============");
-                    Console.WriteLine("1.Merge Search");
-                    Console.WriteLine("2.Insertion Search");
-                    Console.WriteLine("3.Exit");
-                    Console.Write("Enter your choice (1,2,3) : ");
+                    Console.WriteLine("1.Merge Search");;
+                    Console.WriteLine("2.Exit");
+                    Console.Write("Enter your choice (1,2) : ");
                     pilihanmenu = Convert.ToInt32(Console.ReadLine());
                     switch (pilihanmenu)
                     {
@@ -98,14 +104,6 @@ namespace MuhammadGhoziAG_20210140053_Exe2
                             myList.Merge();
                             break;
                         case 2:
-                            Console.WriteLine("");
-                            Console.WriteLine(".................");
-                            Console.WriteLine("Insertion Search");
-                            Console.WriteLine(".................");
-                            myList.input();
-                            myList.Insertion();
-                            break;
-                        case 3:
                             Console.WriteLine("exit.");
                             break;
                         default:
@@ -120,7 +118,7 @@ namespace MuhammadGhoziAG_20210140053_Exe2
                 // to exit from the console 
                 Console.WriteLine("\n\nPress Return to exit. ");
                 Console.ReadLine();
-            } while (pilihanmenu != 3);
+            } while (pilihanmenu != 2);
         }
     }
 }
