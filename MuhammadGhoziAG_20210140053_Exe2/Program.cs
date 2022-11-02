@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,35 +65,39 @@ namespace MuhammadGhoziAG_20210140053_Exe2
         }
 
         //method merge
-        public void Merge()
+        public void Merge(int[] ouzi, int left, int middle, int right)
         {
 
-            // Merges two subarrays of []arr.
-            void merge(int[] ouzi, int l, int m, int r)
+            var leftArrayLength = middle - left + 1;
+            var rightArrayLength = right - middle;
+            var leftTempArray = new int[leftArrayLength];
+            var rightTempArray = new int[rightArrayLength];
+            int i, j;
+            for (i = 0; i < leftArrayLength; ++i)
+                leftTempArray[i] = ouzi[left + i];
+            for (j = 0; j < rightArrayLength; ++j)
+                rightTempArray[j] = ouzi[middle + 1 + j];
+            i = 0;
+            j = 0;
+            int k = left;
+            while (i < leftArrayLength && j < rightArrayLength)
             {
-                // Find sizes of two
-                // subarrays to be merged
-                int n1 = m - l + 1;
-                int n2 = r - m;
-
-                // Create temp arrays
-                int[] L = new int[n1];
-                int[] R = new int[n2];
-                int i, j;
-
-                // Copy data to temp arrays
-                for (i = 0; i < n1; ++i)
-                    L[i] = ouzi[l + i];
-                for (j = 0; j < n2; ++j)
-                    R[j] = ouzi[m + 1 + j];
-
-                // Merge the temp arrays
-                // Initial indexes of first
-                // and second subarrays
-                i = 0;
-                j = 0;
-
-               
+                if (leftTempArray[i] <= rightTempArray[j])
+                {
+                    ouzi[k++] = leftTempArray[i++];
+                }
+                else
+                {
+                    ouzi[k++] = rightTempArray[j++];
+                }
+            }
+            while (i < leftArrayLength)
+            {
+                ouzi[k++] = leftTempArray[i++];
+            }
+            while (j < rightArrayLength)
+            {
+                ouzi[k++] = rightTempArray[j++];
             }
 
         }    
@@ -140,6 +145,11 @@ namespace MuhammadGhoziAG_20210140053_Exe2
                 Console.WriteLine("\n\nPress Return to exit. ");
                 Console.ReadLine();
             } while (pilihanmenu != 2);
+        }
+
+        private void Merge()
+        {
+          
         }
     }
 }
